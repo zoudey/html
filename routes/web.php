@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BotManController;
 use App\Http\Middleware\CheckLogin;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Route;

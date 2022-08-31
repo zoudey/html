@@ -23,7 +23,7 @@ class CartController extends Controller
         $product = Product::select('*')->where('id', $id)->first();
         if ($cart && $cart->product_id==$id) {
             $cart->quantily = $cart->quantily + $request->quantily;
-            $cart->total = $cart->quantity*$product['price'];
+            $cart->total = $cart->quantily * $product['price'];
             $cart->save();
             return redirect()->back();
             // return redirect()->route('Cart');
@@ -32,7 +32,7 @@ class CartController extends Controller
         $data['quantily'] = $request->quantily;
         $data['price'] = $product['price'];
         $data['users_id'] = Auth::user()->id;
-        $data['total'] = 1 * $product['price'];
+        $data['total'] = 1 * $request->quantily * $product['price'];
         Cart::create($data);
         return redirect()->back();
     }
@@ -70,7 +70,7 @@ class CartController extends Controller
             'desc' => $request->desc,
 
         ])->save();
-        
+
         foreach ($cart as $item) {
             Cart::destroy($item->id);
         }
@@ -85,5 +85,5 @@ class CartController extends Controller
             'donhang' => $donhang,
         ]);
     }
-    
+
 }

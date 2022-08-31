@@ -47,7 +47,7 @@
                                             @foreach ($category as $item)
                                                 <li>
                                                     <a href="{{ route('users.search_cate', $item->id) }}">
-                                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                        <option value="{{ $item->id}}">{{ $item->name }}</option>
                                                     </a>
                                                 </li>
                                             @endforeach

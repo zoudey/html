@@ -1,5 +1,6 @@
 @extends('layout.header')
 @section('content')
+
     <div id="sns_content" class="wrap layout-m">
         <div class="container">
             <div class="row">
@@ -45,8 +46,6 @@
                                 </li>
                             </ul>
                         </div>
-
-
                         <div id="sns_producttaps1" class="sns_producttaps_wraps">
                             <h3 class="">PRODUCT</h3>
                             <div class="tab-content">
@@ -91,12 +90,23 @@
                                                         <div class="action-bot">
                                                             <div class="wrap-addtocart">
                                                                 <form action="">
-                                                                    <input type="hidden" class="cart_product_id_{{$item->id}}" value="{{$item->id}}" id="">
-                                                                    <input type="hidden" class="cart_quantily_id_{{$item->id}}" value="1" id="">
-                                                                    <input type="hidden" class="cart_name_id_{{$item->id}}" value="{{$item->name}}" id="">
-                                                                    <input type="hidden" class="cart_price_id_{{$item->id}}" value="{{$item->price}}" id="">
-                                                                    <input type="hidden" class="cart_image_id_{{$item->id}}" value="{{$item->image}}" id="">
-                                                                    <button type="submit" data-id="{{$item->id}}" class="btn-cart" name="bnt-cart"
+                                                                    <input type="hidden"
+                                                                        class="cart_product_id_{{ $item->id }}"
+                                                                        value="{{ $item->id }}" id="">
+                                                                    <input type="hidden"
+                                                                        class="cart_quantily_id_{{ $item->id }}"
+                                                                        value="1" id="">
+                                                                    <input type="hidden"
+                                                                        class="cart_name_id_{{ $item->id }}"
+                                                                        value="{{ $item->name }}" id="">
+                                                                    <input type="hidden"
+                                                                        class="cart_price_id_{{ $item->id }}"
+                                                                        value="{{ $item->price }}" id="">
+                                                                    <input type="hidden"
+                                                                        class="cart_image_id_{{ $item->id }}"
+                                                                        value="{{ $item->image }}" id="">
+                                                                    <button type="submit" data-id="{{ $item->id }}"
+                                                                        class="btn-cart" name="bnt-cart"
                                                                         title="Add to Cart">
                                                                         <i class="fa fa-shopping-cart"></i>
                                                                         <span>Add to Cart</span>
@@ -154,7 +164,7 @@
                                         style="display: inline-block">
                                         <div class="item">
                                             <div class="banner5">
-                                                
+
                                             </div>
                                             <div class="blog-page">
                                                 <div class="blog-left">
@@ -164,7 +174,7 @@
 
                                                 <div class="blog-right">
                                                     <p class="style1">Chair
-                                                            furnitured</a></p>
+                                                        furnitured</a></p>
                                                     <p class="style2">Lorem Ipsum has been the industry's </p>
                                                     <p class="style3">Lorem Ipsum is simply dummy text of the printing and
                                                         typesetting industry. Lorem Ipsum has been the industry's standard
@@ -175,7 +185,7 @@
                                         </div>
                                         <div class="item">
                                             <div class="banner5">
-                                            
+
                                             </div>
                                             <div class="blog-page">
                                                 <div class="blog-left">
@@ -185,7 +195,7 @@
 
                                                 <div class="blog-right">
                                                     <p class="style1">Leather
-                                                            Sofas</a></p>
+                                                        Sofas</a></p>
                                                     <p class="style2">When an unknown printer took galley</p>
                                                     <p class="style3">When an unknown printer took a galley of type and
                                                         scrambled it to make a type specimen book. It has survived not only
@@ -197,8 +207,8 @@
 
                                         <div class="item">
                                             <div class="banner5">
-                                                
-                                                    <img src="/dist/images/blog/blog7.jpg" alt="">
+
+                                                <img src="/dist/images/blog/blog7.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="blog-page">
@@ -209,7 +219,7 @@
 
                                                 <div class="blog-right">
                                                     <p class="style1">Chair
-                                                            furnitured</a></p>
+                                                        furnitured</a></p>
                                                     <p class="style2">Lorem Ipsum has been </p>
                                                     <p class="style3">Lorem Ipsum is simply dummy text of the printing and
                                                         typesetting industry ...</p>
@@ -221,7 +231,7 @@
 
                                         <div class="item">
                                             <div class="banner5">
-                                                
+
                                             </div>
                                             <div class="blog-page">
                                                 <div class="blog-left">
@@ -231,7 +241,7 @@
 
                                                 <div class="blog-right">
                                                     <p class="style1">Chair
-                                                            furnitured</a></p>
+                                                        furnitured</a></p>
                                                     <p class="style2">Lorem Ipsum has been the industry's </p>
                                                     <p class="style3">Lorem Ipsum is simply dummy text of the printing and
                                                         typesetting industry. Lorem Ipsum has been the industry's standard
@@ -242,7 +252,7 @@
                                         </div>
                                         <div class="item">
                                             <div class="banner5">
-                                            
+
                                             </div>
                                             <div class="blog-page">
                                                 <div class="blog-left">
@@ -252,7 +262,7 @@
 
                                                 <div class="blog-right">
                                                     <p class="style1">Leather
-                                                            Sofas</a></p>
+                                                        Sofas</a></p>
                                                     <p class="style2">When an unknown printer took galley</p>
                                                     <p class="style3">When an unknown printer took a galley of type and
                                                         scrambled it to make a type specimen book. It has survived not only
@@ -263,8 +273,8 @@
                                         </div>
 
                                         <div class="item">
-                                            
-                                                <img src="/dist/images/blog/blog7.jpg" alt="">
+
+                                            <img src="/dist/images/blog/blog7.jpg" alt="">
                                             </a>
                                             <div class="blog-page">
                                                 <div class="blog-left">
@@ -274,7 +284,7 @@
 
                                                 <div class="blog-right">
                                                     <p class="style1">Chair
-                                                            furnitured</a></p>
+                                                        furnitured</a></p>
                                                     <p class="style2">Lorem Ipsum has been </p>
                                                     <p class="style3">Lorem Ipsum is simply dummy text of the printing and
                                                         typesetting industry ...</p>

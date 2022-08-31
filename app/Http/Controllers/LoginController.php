@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
+use App\Models\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +17,7 @@ class LoginController extends Controller
     }
 
     public function post_login(Request $request)
-    {   
+    {
         // $request->validate([
         //     'email' => 'required',
         //     'password' => 'required|min:6|max:32',
@@ -39,7 +40,7 @@ class LoginController extends Controller
         return view('user.login.register');
     }
     public function post_register(Request $request)
-    {   
+    {
         // $request->validate([
         //     'name' => 'required|min:6|max:32',
         //     'email' => 'required',
@@ -65,9 +66,9 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
+        Cart::destroy(Cart::all()->where('users_id', Auth::user()->id));
         Auth::logout();
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
         return redirect()->route('auth.login');
     }

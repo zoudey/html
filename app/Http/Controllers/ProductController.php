@@ -34,10 +34,10 @@ class ProductController extends Controller
 
     public function Shop()
     {
-        $category = Category::all();
+        $category = Category::all()->where('parent_id', 0);
         $products = Product::select('*')
             ->paginate(10);
-        $product = Product::select('*')->paginate(3);
+        $product = Product::select('*')->paginate(5);
         return view('user.product.shop', ['product_list' => $products, 'product' => $product, 'category' => $category]);
     }
     public function ProductDetail(Request $request)
@@ -137,7 +137,7 @@ class ProductController extends Controller
         return view('admin.product.create', ['cate_list' => $category]);
     }
     public function store_pro(ProductRequest $request)
-    {   
+    {
         $request->validate([
             'name' => 'required|min:6|max:32',
             'price' => 'required',
@@ -152,7 +152,7 @@ class ProductController extends Controller
             $avatarName = $request->username . '_' . $avatarName;
             $product->image = $image->storeAs('images/users', $avatarName);
 
-            
+
             //storage
         } else {
             $product->image = '';
